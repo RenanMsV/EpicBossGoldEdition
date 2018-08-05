@@ -14,7 +14,7 @@ http://inutiles.atspace.cc/minecraft/EpicBossDocs/
 * Shulkers no longer spawn with random colors by default.
 * Can now set Villager profession by tag VillagerType. Types: BLACKSMITH, BUTCHER, FARMER, LIBRARIAN, NITWIT, PRIEST.
 * Can now set Shulker color by tag Color as Sheep and Wolf does. If set Color to -1 they will spawn with a random Color.
-* Can now set boss's custom name visible by tag DisplayVisible. Default false.
+* Can now set boss's custom name visible by DisplayVisible. Default false.
 
 # 1.12.2 0.7
 * Fixed bugs.
