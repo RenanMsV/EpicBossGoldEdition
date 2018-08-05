@@ -23,7 +23,5 @@ http://inutiles.atspace.cc/minecraft/EpicBossDocs/
 * Shulkers spawn with random colors.
 
 # ToDo
-* Color tag to spawn Shulkers with colors.
-* Villager/Zombie villager profession tag to spawn em with the right profession.
 * Team tag to avoid bosses killing each other.
 * 1.13 support.
