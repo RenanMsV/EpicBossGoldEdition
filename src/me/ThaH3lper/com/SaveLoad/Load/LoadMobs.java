@@ -21,6 +21,7 @@ public class LoadMobs
                     final String file = sl.thefile.getName();
                     final String Mobtype = sl.getCustomConfig().getString(String.valueOf(s) + ".Mobtype");
                     final String Display = sl.getCustomConfig().getString(String.valueOf(s) + ".Display");
+                    final boolean DisplayVisible = sl.getCustomConfig().getBoolean(String.valueOf(s) + ".DisplayVisible");
                     final double health = sl.getCustomConfig().getDouble(String.valueOf(s) + ".Health");
                     final double damage = sl.getCustomConfig().getDouble(String.valueOf(s) + ".Damage");
                     final boolean showhp = sl.getCustomConfig().getBoolean(String.valueOf(s) + ".ShowHealth");
@@ -39,7 +40,7 @@ public class LoadMobs
                     final List<String> skills = (List<String>)sl.getCustomConfig().getStringList(String.valueOf(s) + ".Skills");
                     final List<String> loot = (List<String>)sl.getCustomConfig().getStringList(String.valueOf(s) + ".Loot");
                     final List<String> equipment = (List<String>)sl.getCustomConfig().getStringList(String.valueOf(s) + ".Equipment");
-                    EpicBoss.plugin.listMobs.add(new EpicMobs(file, cmdName, Mobtype, Display, loot, equipment, health, damage, speed, knock, follow, skills, despawn, showhp, size, color, oso, horseStyle, horseType, horseColor, villagerType, maxCombatDistance));
+					EpicBoss.plugin.listMobs.add(new EpicMobs(file, cmdName, Mobtype, Display, DisplayVisible, loot, equipment, health, damage, speed, knock, follow, skills, despawn, showhp, size, color, oso, horseStyle, horseType, horseColor, villagerType, maxCombatDistance));
                 }
             }
         }

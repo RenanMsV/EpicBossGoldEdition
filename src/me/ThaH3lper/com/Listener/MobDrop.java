@@ -9,7 +9,6 @@ import me.ThaH3lper.com.Mobs.*;
 import me.ThaH3lper.com.Drops.Fair.*;
 import org.bukkit.event.*;
 import java.util.*;
-import me.ThaH3lper.com.Timer.*;
 import me.ThaH3lper.com.Timer.Timer;
 
 import org.bukkit.event.entity.*;

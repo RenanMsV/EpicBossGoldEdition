@@ -1,7 +1,6 @@
 package me.ThaH3lper.com.Location;
 
 import me.ThaH3lper.com.*;
-import java.util.*;
 
 public class LocationHandler
 {

@@ -7,6 +7,7 @@ public class EpicMobs
 {
     public String Mobtype;
     public String Display;
+    public boolean DisplayVisible;
     public String file;
     public String cmdName;
     public String oso;
@@ -31,12 +32,13 @@ public class EpicMobs
     public int maxCombatDistance;
     public Player targetChanger;
     
-    public EpicMobs(final String file, final String cmdName, final String Mobtype, final String Display, final List<String> loot, final List<String> equipment, final double health, final double damage, final double speed, final double knock, final double follow, final List<String> skills, final boolean despawn, final boolean showhp, final int size, final int color, final String oso, final String horseStyle, final String horseType, final String horseColor, final String villagerType, final int maxCombatDistance) {
+    public EpicMobs(final String file, final String cmdName, final String Mobtype, final String Display, boolean DisplayVisible, final List<String> loot, final List<String> equipment, final double health, final double damage, final double speed, final double knock, final double follow, final List<String> skills, final boolean despawn, final boolean showhp, final int size, final int color, final String oso, final String horseStyle, final String horseType, final String horseColor, final String villagerType, final int maxCombatDistance) {
         this.fair = false;
         this.file = file;
         this.cmdName = cmdName;
         this.Mobtype = Mobtype;
         this.Display = Display;
+        this.DisplayVisible = DisplayVisible;
         this.health = health;
         this.damage = damage;
         this.speed = speed;

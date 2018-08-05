@@ -7,7 +7,6 @@ import me.ThaH3lper.com.Location.*;
 import org.bukkit.event.*;
 import org.bukkit.event.block.*;
 import org.bukkit.*;
-import java.util.*;
 
 public class SignPlace implements Listener
 {

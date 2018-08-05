@@ -7,7 +7,6 @@ import org.bukkit.*;
 import org.bukkit.event.*;
 import org.bukkit.potion.*;
 import org.bukkit.entity.*;
-import java.util.*;
 import me.ThaH3lper.com.Mobs.*;
 
 public class SkillPotionMobs

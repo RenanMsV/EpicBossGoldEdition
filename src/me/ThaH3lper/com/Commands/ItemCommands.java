@@ -6,7 +6,6 @@ import org.bukkit.entity.*;
 import me.ThaH3lper.com.Items.*;
 import org.bukkit.*;
 import org.bukkit.event.inventory.*;
-import java.util.*;
 import org.bukkit.inventory.*;
 
 public class ItemCommands

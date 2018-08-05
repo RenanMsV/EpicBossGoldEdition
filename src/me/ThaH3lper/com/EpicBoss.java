@@ -61,7 +61,7 @@ public class EpicBoss extends JavaPlugin
     
     public EpicBoss() {
         this.logger = Logger.getLogger("Minecraft");
-        this.menu = ChatColor.GREEN + "oOo_-_-_-_-_oOo" + ChatColor.GOLD + ChatColor.BOLD + " EpicBoss Updated " + ChatColor.GREEN + "oOo_-_-_-_-_oO";
+        this.menu = ChatColor.GREEN + "=====" + ChatColor.GOLD + ChatColor.BOLD + " EpicBoss Updated " + ChatColor.GREEN + "=====";
         this.allMobs = new ArrayList<UUID>();
         this.allTimers = new ArrayList<Timer>();
         this.listFair = new ArrayList<FairDrops>();

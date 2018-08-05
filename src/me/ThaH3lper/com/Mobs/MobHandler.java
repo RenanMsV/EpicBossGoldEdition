@@ -52,7 +52,7 @@ public class MobHandler
         if (l instanceof MagmaCube && em.size != 0) {
             ((MagmaCube)l).setSize(em.size);
         }
-        if (l instanceof Wolf || l instanceof Sheep) {
+        if (l instanceof Wolf || l instanceof Sheep || l instanceof Shulker) {
             l = setColor(l, em);
         }
         if (l instanceof Ocelot) {
@@ -93,19 +93,36 @@ public class MobHandler
         String s = em.Display;
         s = ChatColor.translateAlternateColorCodes('&', s);
         l.setCustomName(s);
-        l.setCustomNameVisible(true);
+        l.setCustomNameVisible(em.DisplayVisible);
         return l;
     }
     
     public static LivingEntity setColor(final LivingEntity l, final EpicMobs em) {
         if (l instanceof Wolf) {
             final Wolf e = (Wolf)l;
-            e.setCollarColor(DyeColor.getByDyeData((byte)em.color));
+            if (em.color != -1) {
+	            e.setCollarColor(DyeColor.getByDyeData((byte)em.color));
+            }else {
+            	e.setCollarColor(RandomLib.getRandomDyeColor());
+            }
             return l;
         }
         if (l instanceof Sheep) {
             final Sheep e2 = (Sheep)l;
-            e2.setColor(DyeColor.getByDyeData((byte)em.color));
+            if (em.color != -1) {
+	            e2.setColor(DyeColor.getByDyeData((byte)em.color));
+            }else {
+            	e2.setColor(RandomLib.getRandomDyeColor());
+            }
+            return l;
+        }
+        if (l instanceof Shulker) {
+            final Shulker e2 = (Shulker)l;
+            if (em.color != -1) {
+	            e2.setColor(DyeColor.getByDyeData((byte)em.color));
+            }else {
+            	e2.setColor(RandomLib.getRandomDyeColor());
+            }
             return l;
         }
         return null;

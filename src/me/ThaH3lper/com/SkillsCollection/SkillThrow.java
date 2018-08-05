@@ -6,8 +6,6 @@ import me.ThaH3lper.com.Skills.*;
 import me.ThaH3lper.com.API.*;
 import org.bukkit.*;
 import org.bukkit.event.*;
-import java.util.*;
-import org.bukkit.util.*;
 import org.bukkit.util.Vector;
 
 public class SkillThrow

@@ -21,12 +21,13 @@ public class AllMobs
         if (Mobtype.equalsIgnoreCase("villagezombie")) {
             final Zombie e = (Zombie)l.getWorld().spawnEntity(l, EntityType.ZOMBIE_VILLAGER);
             e.setBaby(false);
-            //e.setVillagerProfession(Villager.Profession.NITWIT);
+            e.setVillagerProfession(RandomLib.getRandomVillagerProfession());
             return (LivingEntity)e;
         }
         if (Mobtype.equalsIgnoreCase("babyvillagezombie")) {
             final Zombie e = (Zombie)l.getWorld().spawnEntity(l, EntityType.ZOMBIE_VILLAGER);
             e.setBaby(true);
+            e.setVillagerProfession(RandomLib.getRandomVillagerProfession());
             return (LivingEntity)e;
         }
         if (Mobtype.equalsIgnoreCase("wolf")) {
@@ -254,7 +255,6 @@ public class AllMobs
         }
         if (Mobtype.equalsIgnoreCase("shulker")) {
             final Shulker e34 = (Shulker)l.getWorld().spawnEntity(l, EntityType.SHULKER);
-            e34.setColor(RandomLib.getRandomDyeColor());
             return (LivingEntity)e34;
         }
         if (Mobtype.equalsIgnoreCase("evoker")) {

@@ -1,6 +1,7 @@
 zombieking:
   Mobtype: zombie
   Display: '&6Zombie King'
+  DisplayVisible: true
   Health: 200
   Damage: 10
   ShowHealth: true
@@ -16,6 +17,7 @@ zombieking:
 fairboss:
   Mobtype: skeleton
   Display: '&dHardcore Boss'
+  DisplayVisible: true
   Health: 100
   Damage: 10
   ShowHealth: true
