@@ -10,6 +10,12 @@ https://www.spigotmc.org/resources/epic-boss-gold-edition-updated.45595/
 ## Plugin docs :
 http://inutiles.atspace.cc/minecraft/EpicBossDocs/
 
+# 1.12.2 0.7.2
+* Can now get the boss UUID using $buuid in the cmd skill.
+    * To set the boss team just: - cmd 'scoreboard teams join Boss $buuid' =1000 1
+    * To remove the boss from a team: - cmd 'scoreboard teams leave $buuid' >200 1
+    * To teleport all players to the boss: - cmd 'tp @a $buuid' =1000 1
+
 # 1.12.2 0.7.1
 * Shulkers no longer spawn with random colors by default.
 * Can now set Villager profession by tag VillagerType. Types: BLACKSMITH, BUTCHER, FARMER, LIBRARIAN, NITWIT, PRIEST.
@@ -23,5 +29,4 @@ http://inutiles.atspace.cc/minecraft/EpicBossDocs/
 * Shulkers spawn with random colors.
 
 # ToDo
-* Team tag to avoid bosses killing each other.
 * 1.13 support.

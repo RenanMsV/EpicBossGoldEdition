@@ -112,6 +112,9 @@ public class SkillCommand
             if (msg.contains("$world")) {
                 msg = msg.replace("$world", l.getWorld().getName());
             }
+            if (msg.contains("$buuid")) {
+            	msg = msg.replace("$buuid", l.getUniqueId().toString());
+            }
             Bukkit.getServer().dispatchCommand((CommandSender)Bukkit.getConsoleSender(), msg);
         }
     }
