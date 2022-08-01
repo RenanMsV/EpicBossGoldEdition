@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EpicBoss Gold Edition Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/purecss-2.1.0.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css" crossorigin="anonymous">
+  <style type="text/css">
+    html { white-space: pre-wrap; font-family: monospace; background-color: #d4d5c5; font-size:smaller; margin: 5px}
+    a:visited {color: #0000f1}
+    #menu button {margin-bottom: .3em;}
+    .pure-button-group .pure-button:last-child {margin-right: 1%}
+    .pure-button-group .pure-button:first-child {margin-left: 1%}
+    .hover_img a { position:relative; }
+    .hover_img a span { position:absolute; display:none; z-index:99; }
+    .hover_img a:hover span { display:block; }
+    .logversion {font-size: 1.5em;}
+  </style>
+</head>
+<body>
+<!-- https://web.archive.org/web/20140719050403im_/https://dl.dropboxusercontent.com/u/103666239/MineCraft/DataBase.png -->
+<img src="./img/DataBase.png"></img>
+<h2>EpicBoss-Updated-Edition Docs</h2>
+
+<div class="pure-button-group" role="group" aria-label="..." style="white-space: normal;">
+  <a href="https://www.spigotmc.org/resources/epic-boss-gold-edition-updated.45595/" target="_blank"><button class="pure-button pure-button-primary"><i class="fas fa-download"></i> Download Plugin</button></a>
+  <a href="https://github.com/RenanMsV/EpicBossGoldEdition" target="_blank"><button class="pure-button pure-button-primary"><i class="fab fa-github"></i> Github Repo</button></a>
+  <a href="https://renanmsv.github.io/EpicBossGoldEdition" target="_blank"><button class="pure-button pure-button-primary"><i class="fas fa-book-open"></i> Documentation</button></a>
+</div>
+
+<i><b class="logversion"># 1.12.2 0.7.2</b></i>
+* Can now get the boss UUID using $buuid in the cmd skill.
+  * To set the boss team just: - cmd 'scoreboard teams join Boss $buuid' =1000 1
+  * To remove the boss from a team: - cmd 'scoreboard teams leave $buuid' >200 1
+  * To teleport all players to the boss: - cmd 'tp @a $buuid' =1000 1
+
+<i><b class="logversion"># 1.12.2 0.7.1</b></i>
+* Shulkers no longer spawn with random colors by default.
+* Can now set Villager profession by tag VillagerType. Types: BLACKSMITH, BUTCHER, FARMER, LIBRARIAN, NITWIT, PRIEST.
+* Can now set Shulker color by tag Color as Sheep and Wolf does. If set Color to -1 they will spawn with a random Color.
+* Can now set boss's custom name visible by DisplayVisible. Default false.
+
+<i><b class="logversion"># 1.12.2 0.7</b></i>
+* Fixed bugs.
+* Can now spawn zombie villagers and baby zombie villagers.
+* Can now spawn Wither Skeletons.
+* Shulkers spawn with random colors.
+
+<b>2018:</b> Added missing skills descriptions(pack,randompack,newtarget,teleportnear). Starter tutorials. 1.12+ mobs added to the list of mobs.
+<b>2013:</b> New 1.12 versions have more stuff that need to be added to the docs.
+
+<!--
+<div class="pure-button-group" role="group" aria-label="..." style="white-space: normal;" id="menu">
+-->
+<div id="menu">
+  <h2>Menu</h2>
+  <a href="#all_skills"><button class="pure-button pure-button-primary"><i class="fas fa-wand-magic"></i> All Skills</button></a>
+  <a href="#all_mobs_list_and_tags_list"><button class="pure-button pure-button-primary"><i class="fas fa-ghost"></i> All Mobs List And Tags List</button></a>
+  <a href="#all_potion_types"><button class="pure-button pure-button-primary"><i class="fas fa-prescription-bottle"></i> All Potion Types</button></a>
+  <a href="#all_enchantments"><button class="pure-button pure-button-primary"><i class="fas fa-book-open"></i> All Enchantments</button></a>
+  <a href="#all_biomes_list"><button class="pure-button pure-button-primary"><i class="fas fa-tree"></i> All Biomes List</button></a>
+  <a href="#create_your_first_boss"><button class="pure-button pure-button-primary"><i class="fas fa-skull"></i> Create Your First Boss</button></a>
+  <a href="#create_your_first_item"><button class="pure-button pure-button-primary"><i class="fas fa-hammer"></i> Create Your First Item</button></a>
+  <a href="#add_drops_to_your_boss"><button class="pure-button pure-button-primary"><i class="fas fa-bag-shopping"></i> Add Drops to Your Boss</button></a>
+  <a href="#add_equipment_to_your_boss"><button class="pure-button pure-button-primary"><i class="fas fa-shield-halved"></i> Add Equipment to Your Boss</button></a>
+  <a href="#create_your_first_skill"><button class="pure-button pure-button-primary"><i class="fas fa-fire"></i> Create Your First Skill</button></a>
+  <a href="#how_to_setup_locations"><button class="pure-button pure-button-primary"><i class="fas fa-location-dot"></i> How to Setup Locations</button></a>
+  <a href="#how_to_setup_timers"><button class="pure-button pure-button-primary"><i class="fas fa-stopwatch"></i> How to Setup Timers</button></a>
+  <a href="#how_to_setup_random_spawning"><button class="pure-button pure-button-primary"><i class="fas fa-shuffle"></i> How to Setup Random Spawning</button></a>
+</div>
+
+<a id="all_skills"></a>
+<h1>All skills</h1>
+
+Here is a list of all the skills that is included in EpicBoss Gold Edition! More skills will be added. Also remember that this is only a quick list of all skills. if you want to know how to use them you need to read the tutorial (coming soon)
+
+All Skills
+
+<b> - pack pack_name =HP Chance </b>
+pack_name = pack name from skills files.
+info:
+Executes a pack of skills from the skills files.
+Example:
+- pack strike =10 1
+- pack deathmessage =0 1
+- pack spawnmessage =100 1
+
+<b> - randompack pack_name_list =HP Chance </b>
+pack_name_list = list of pack names from skills files.
+info:
+Executes a random pack from a given list of packs.
+Example:
+- randompack strike,confuse,superspeed =10 1
+- randompack deathmessage,reborn =0 1
+- randompack spawnmessage,doublehealth =100 1
+
+<b> - bossfirework balltype:color:flicker:trail =HP Chance </b>
+balltype = BALL, BALL_LARGE, BURST, CREEPER, STAR | color = red,green,blue | flicker = true/false | trail = true/false
+info:
+This is a skill that creates a firework explosion at the boss. You can change the Shape, color, trail and flicker. Remember that colors can go from 0-255.
+Example:
+- bossfirework BALL_LARGE:255,0,0:true:false =0 1
+- bossfirework BURST:100,0,255:false:false >0 0.15
+- bossfirework START:255,255,255:true:true =0 1
+
+<b> - cmd 'command' =HP Chance </b>
+command = the command that is going to be executed
+info:
+You should not write the / in this, since commands from console is not using it. You can use diffrent replacers to get a new value:
+$player = Name of damaging player
+$boss = Name of the boss
+$world = Get the world name
+$player_x, $player_y, $player_z = replaces to players location values
+$boss_x, $boss_y, $boss_z = replaces to boss location values
+Coordinate variables can also have a random offset using %, such as $boss_x%5
+$buuid = replaces to boss UUID.
+Example:
+- cmd 'say Hello everyone!' >50 0.05
+- cmd 'say $player killed $boss' =0 1
+- cmd 'eb mob spawn zombieking 1 $world,$player_x%10,$player_y,$player_z%10' <100 0.01
+
+<b> - radiuscmd radius:'command' =HP Chance </b>
+radius = pick every player inside radius | command = the command that is going to be executed
+info:
+This will pick all players inside radius and execute a command for each of them. You should not write the / in this, since commands from console is not using it. You can use different replaces to get a new value:
+$player = Name of the picked players
+$boss = Name of the boss
+$world = Get the world name
+$player_x, $player_y, $player_z = replaces to players location values
+$boss_x, $boss_y, $boss_z = replaces to boss location values
+Coordinate variables can also have a random offset using %, such as $boss_x%5
+$buuid = replaces to boss UUID.
+Example:
+- radiuscmd 100:'say Hello everyone!' >50 0.05
+- radiuscmd 50:'say $player killed $boss' =0 1
+- radiuscmd 20:'eb mob spawn zombieking 1 $world,$player_x,$player_y,$player_z' <100 0.01
+
+<b> - msg radious:'message' =HP Chance </b>
+radius = radius in blocks | message = the message
+info:
+Sends a message to all players inside radius. if radius equals 0 then target all players in world. Message has to be inside '' and color codes can be used.
+Also some word replacers can be used:
+$player = get the player name
+$boss = get the boss name
+$bosshp = get the boss current health
+Example:
+- msg 50:'&4I will kill you all!' >0 0.01
+- msg 0:'&4$player &2killed &4$boss' =0 1
+- msg 20:'&3You will die $player!' >100 0.05
+
+<b> - consume horizontal_radius:vertical_radius:damage_amount:heal_amount mobs,boss =HP Chance </b>
+radius_horizontal/vertical = radius vertical and horizontal | damage = amount of damage | heal_amount = amount to heal | mobs,boss = list of bosses or mobs
+info:
+Damages all mobs or bosses listed in the radius for amount, and heals the boss for heal_amount for each mob damaged this way.
+Example:
+- consume 20:10:10:5 ZOMBIE,ZombieKing =100 1
+- consume 50:40:20:2 SKELETON,SPIDER >0 0.15
+- consume 30:30:12:10 PLAYER =50 1
+
+<b> - heal amount =HP Chance </b>
+amount = amount to heal
+info:
+Heals the boss
+Example:
+- heal 20 =10 1
+- heal 10 >0 0.01
+- heal 100 >100 0.02
+
+<b> - lightning radius:damage =HP Chance </b>
+radius = radius in blocks | damage = amount to damage
+info:
+This skill will target all players inside radius and strike them with lightning dealing damage. if radius equals 0 then target all players in world
+Example:
+- lightning 40:5 =500 1
+- lightning 10:15 =100 1
+- lightning 20:10 >500 0.05
+
+<b> - radiousfirework radious:ball:red:true:true =HP Chance </b>
+radius = radius in blocks | balltype = BALL, BALL_LARGE, BURST, CREEPER, STAR | color = red,green,blue | flicker = true/false | trail = true/false
+info:
+This is a skill that creates a firework explosion at the players inside radius. if radius equals 0 then it will target damaging player. You can change the Shape, color, trail and flicker. Remember that colors can go from 0-255.
+Example:
+- radiousfirework 50:BALL_LARGE:255,100,0:true:false =0 1
+- radiousfirework 20:CREEPER:200,50,255:false:false >0 0.15
+- radiousfirework 10:START:255,100,255:true:true =0 1
+
+<b> - potion radius:type:duration:lvl =HP Chance </b>
+radius = radius in blocks | type = <a href="#all_potion_types">[See types here]</a> | duration = duration in seconds | lvl = amplitude for potion
+info:
+This will potion all players inside radius with the potion type you define. It will last for the duration you set and have the lvl(amplitude) you set. radius equal 0 then target player will get potion.
+Example:
+- potion 20:SLOW:20:2 >0 0.02
+- potion 0:BLINDNESS:10:1 >500 0.05
+- potion 50:POISON:5:2 =100 1
+
+<b> - potionboss type:duration:lvl =HP Chance </b>
+type = <a href="#all_potion_types">[See types here]</a> | duration = duration in seconds | lvl = amplitude for potion
+info:
+This will give boss a potion for the duration you set. It will have the lvl(amplitude) and type that you give.
+Example:
+- potionboss INVISIBILITY:20:1 >0 0.02
+- potionboss JUMP:30:2 =100 1
+- potionboss SPEED:15:2 >50 0.05
+
+<b> - pull radius:velocity =HP Chance </b>
+radius = radius in blocks | velocity = power of the pull
+info:
+This skill will pick all players inside radius and drag them toward boss with the power you set on velocity. If radius equal 0 then all players in world will be picked
+Example:
+- pull 0:10 >0 0.01
+- pull 50:20 =100 0
+- pull 20:25 <500 0.01
+
+<b> - radiusfirework amount:radius:balltype:color:flicker:trail =HP Chance </b>
+amount = amount of explosions | radius = radius for the circle of explosions | balltype = BALL, BALL_LARGE, BURST, CREEPER, STAR | color = red,green,blue | flicker = true/false | trail = true/false
+info:
+This will create a circle of explosions around the boss. Define how big the circle should be by radius and how many explosions by amount. colors should be between 0-255
+Example:
+- radiusfirework 10:10:BURST:255,0,0:false:false =100 1
+- radiusfirework 20:15:BURST:100,0,255:false:false >0 0.15
+- radiusfirework 8:20:STAR:255,255,255:true:true =0 1
+
+<b> - swarm name:amount:radius =HP chance </b>
+name = name on mob | amount = amount of mobs | radius = the radius variation
+info:
+This will spawn the amount of mobs at a random location inside radius of boss. Remember that if you want to spawn a boss you need to type a '$' before!
+Example:
+- swarm babyvillagezombie:10:10 =100 1
+- swarm mushroomcow:5:20 >0 0.01
+- swarm $zombieking:1:5 =0 1
+
+<b> - teleport =HP Chance </b>
+info:
+Boss teleports to targeted player!
+Example:
+- teleport =270 1
+- teleport >100 0.01
+- teleport <500 0.004
+
+<b> - teleportnear radius_xz:radius_y:maxdistance =HP Chance </b>
+radius_xz = x and z axis range | radius_y = y axis range | maxdistance = (optional) max distance to be able to tp
+info:
+Boss teleports to a random place near the targeted player.
+Example:
+- teleportnear 30:0:30 =270 1
+- teleportnear 10:6 >100 0.01
+- teleportnear 30:15:15 <500 0.004
+
+<b> - throw radius:horizontal_strength:vertical_strength =HP Chance </b>
+radius = radius to pick players | horizontal/vertical_strength = The power horizontal and vertical
+info:
+This skill will throw all players inside radius away from boss with the forces you set.
+Example:
+- throw 20:10:20 =100 0
+- throw 50:15:15 >0 0.001
+- throw 10:20:25 <400 0.05
+
+<b> - shootfireball power:incendiary:fire_ticks =HP Chance </b>
+power = the power of the explosion | incendiary = true/false | fire_ticks = how long player should be on fire
+info:
+This will shot fireball to targeted player. if incendiary is true then the explosion will be with fire. 20 Fire_ticks equals 1sec 
+Example:
+- shootfireball 5:false:0 =200 1
+- shootfireball 10:true:100 =250 1
+- shootfireball 0:false:60 >0 0.08
+
+<b> - shootpotion type:duration:level:velocity =HP Chance </b>
+type = [See types here] | duration = duration in seconds | level = the amplitude for potion | velocity = the power of the throw
+info:
+This will throw a potion toward the player. use the velocity to change the power of it. Duration is in seconds
+Example:
+- shootpotion CONFUSION:8:1:2 =500 10
+- shootpotion BLINDNESS:10:1:5 >0 0.01
+- shootpotion WEAKNESS:20:2:25 >50 0.05
+
+<b> - projectile type:damage:velocity =HP Chance </b>
+type = arrow, snowball, egg, enderpearl | damage = damage of projectile | velocity = The power of the projectile
+info:
+This will shoot the selected type of power toward player with the velocity and damage the player with damage.
+Example:
+- projectile arrow:10:5 =400 1
+- projectile snowball:20:20 >200 0.1
+- projectile egg:6:16 <1000 0.01
+
+<b> - shootskull power =HP Chance </b>
+power = power of the skull
+info:
+This will shoot a witherskull towards player whit the power you set
+Example:
+- shootskull 10 =150 1
+- shootskull 5 =225 1
+- shootskull 15 >0 0.02
+
+<b> - damage radius:damage:ignorearmor =HP Chance </b>
+radius = radius in blocks | damage = damage amount | ignorearmor = true/false
+info:
+Damages players in a radius, or the attacking player if radius = 0.
+Example:
+- damage 10:10:false =100 1
+- damage 20:5:false >100 0.22
+- damage 0:15:true 200-100 0.2
+
+<b> - forcepull radius =HP Chance </b>
+radius = radius in blocks
+info:
+Teleports all players within radius to the boss, or the attacking player if radius = 0.
+Example:
+- forcepull 10 =300 1
+- forcepull 25 >500 0.1
+- forcepull 0 /300-50 0.15
+
+<b> - forcepullnear radius:new_horizontal_radius:new_vertical_radius =HP Chance </b>
+radius = radius in blocks | new_horizontal_radius/new_vertical_radius = random radius to teleport within.
+info:
+Teleports all players within radius(or the attacking player if radius = 0) to a random location within the given new horizontal/vertical radii.
+Example:
+- forcepullnear 50:5:5 =340 1
+- forcepullnear 40:0:10 >200 0.3
+- forcepullnear 10:2:5 500-400 0.12
+
+<b> - potionmobs radius:type:duration:lvl mob,boss... =HP Chance </b>
+radius = radius in blocks | type = <a href="#all_potion_types">[See types here]</a> | duration = duration in seconds | level = the amplitude for potion | mob,boss = list of bosses or mobs
+info:
+Gives the potion effect you specify to all mobs or bosses in the list that are within the radius.
+Example:
+- potionmobs 2:SPEED:20:2 skeleton,SkeletonKing,spider =500 1
+- potionmobs 20:WEAKNESS:60:2 ZombieKing,spider <500 0.2
+- potionmobs 10:SLOW:30:1 zombie 600-500 0.4
+
+<b> - newtarget radius =HP Chance </b>
+info:
+Makes the Boss target another player in a radius. Requires +2 players in range.
+Example:
+- newtarget 20 =500 1
+- newtarget 50 =500 0.1
+- newtarget 20 =100 1 
+
+<a id="all_mobs_list_and_tags_list"></a>
+<h1><b>All Mobs List And Tags List</b></h1>
+Here is a list of all mobs that is supported in EpicBoss Gold Edition. Remember that some mobs can have a tag to change there type and color. see what number they have and see the tag at the bottom off the page!
+
+<b>All Mobs:</b>
+zombie
+babyzombie
+villagezombie
+babyvillagezombie
+wolf |2|
+babywolf |2|
+angrywolf |2|
+angrybabywolf |2|
+wither
+witch
+villager [7]
+babyvillager [7]
+squid
+spider
+snowman
+slime |1|
+skeleton
+witherskeleton
+silverfish
+sheep |2|
+babysheep |2|
+pigzombie
+angrypigzombie
+babypigzombie
+angrybabypigzombie
+pig
+babypig
+ocelot |3|
+babyocelot |3|
+mushroomcow
+babymushroomcow
+magmacube |1|
+irongolem
+horse |4||5||6|
+babyhorse |4||5||6|
+giant
+ghast
+enderman
+creeper
+poweredcreeper
+cow
+babycow
+chicken
+babychicken
+cavespider
+blaze
+bat
+enderdragon
+
+<b>1.12+ Mobs</b>
+stray
+vex
+vindicator
+husk
+shulker [2]
+evoker
+guardian
+elderguardian
+endermite
+rabbit
+polarbear
+
+<b>Tags (can be applied to all mobs!)</b>
+Speed: [double] - set speed of mob, recommended between 0 and 1
+KnockbackRes: [double]
+Followrange: [double]
+
+<b>Special Tags: (can be applied to mobs whit same number!) </b>
+|1| Size: [int] - Set the size of the slime/magmacube
+|2| Color: [int] - Insert the number of color you want! (-1 = random color)
+<!-- https://web.archive.org/web/20160413152638if_/https://dl.dropboxusercontent.com/u/103666239/MineCraft/DataWool.png -->
+<img src="./img/DataWool.png" height="20px" alt="colors" />
+|3| Ocelot: [type] - set the type you want: BLACK_CAT, RED_CAT, SIAMESE_CAT, WILD_OCELOT
+|4| HorseStyle: [style] - set the style you want: BLACK_DOTS, WHITE, WHITE_DOTS, WHITEFIELD
+|5| HorseType: [type] - set the type you want: DONKEY, HORSE, MULE, SKELETON_HORSE, UNDEAD_HORSE
+|6| HorseColor: [color] - set the color you want: BLACK, BROWN, CHESTNUT, CREAMY, DARK_BROWN, GRAY, WHITE
+|7| VillagerType: [type] - set the type of villager you want: BLACKSMITH, BUTCHER, FARMER, LIBRARIAN, NITWIT, PRIEST
+
+<b>Example:</b>
+Code:
+horse:
+  Mobtype: horse
+  Display: '&2Horse'
+  Health: 100
+  Damage: 0
+  ShowHealth: true
+  Despawn: false
+  Tags:
+    Speed: 0.4
+    HorseColor: BLACK
+    HorseStyle: WHITE_DOTS
+
+This will look like this:
+<!-- https://web.archive.org/web/20140719055918im_/https://dl.dropboxusercontent.com/u/103666239/MineCraft/DataBase%20Horse.png -->
+<img src="./img/DataBase%20Horse.png"></img>
+
+<a id="all_potion_types"></a>
+<h1><b>All Potion Types</b></h1>
+
+Here is a list of all the potion types that exist in Minecraft. You will mainly need this list to set correct potion type on some skills.
+
+All Potion Types
+<b>SPEED</b>
+Increases movement speed.
+<b>SLOW</b>
+Decreases movement speed.
+<b>FAST_DIGGING</b>
+Increases dig speed.
+<b>SLOW_DIGGING</b>
+Decreases dig speed.
+<b>INCREASE_DAMAGE</b>
+Increases damage dealt.
+<b>HEAL</b>
+Heals an entity.
+<b>HARM</b>
+Hurts an entity.
+<b>JUMP</b>
+Increases jump height.
+<b>CONFUSION</b>
+Warps vision on the client.
+<b>REGENERATION</b>
+Regenerates health.
+<b>DAMAGE_RESISTANCE</b>
+Decreases damage dealt to an entity.
+<b>FIRE_RESISTANCE</b>
+Stops fire damage.
+<b>WATER_BREATHING</b>
+Allows breathing underwater.
+<b>INVISIBILITY</b>
+Grants invisibility.
+<b>BLINDNESS</b>
+Blinds an entity.
+<b>NIGHT_VISION</b>
+Allows an entity to see in the dark.
+<b>HUNGER</b>
+Increases hunger.
+<b>WEAKNESS</b>
+Decreases damage dealt by an entity.
+<b>POISON</b>
+Deals damage to an entity over time.
+<b>WITHER</b>
+Deals damage to an entity over time and gives the health to the shooter.
+<b>HEALTH_BOOST</b>
+Increases the maximum health of an entity.
+<b>ABSORPTION</b>
+Increases the maximum health of an entity with health that cannot be regenerated, but is refilled every 30 seconds.
+<b>SATURATION</b>
+Increases the food level of an entity each tick.
+
+<a id="all_enchantments"></a>
+<h1><b>All Enchantments</b></h1>
+
+Here is a list of all the enchantments you can use on items in Minecraft. This list is very handy when you are going to create new items with enchantments. 
+
+<b>All Enchantments</b>
+<b>ARROW_DAMAGE</b>
+Provides extra damage when shooting arrows from bows
+<b>ARROW_FIRE</b>
+Sets entities on fire when hit by arrows shot from a bow
+<b>ARROW_INFINITE</b> 
+Provides infinite arrows when shooting a bow
+<b>ARROW_KNOCKBACK</b>
+Provides a knockback when an entity is hit by an arrow from a bow
+<b>DAMAGE_ALL</b>
+Increases damage against all targets
+<b>DAMAGE_ARTHROPODS</b> 
+Increases damage against arthropod targets
+<b>DAMAGE_UNDEAD</b>
+Increases damage against undead targets
+<b>DIG_SPEED</b>
+Increases the rate at which you mine/dig
+<b>DURABILITY</b>
+Decreases the rate at which a tool looses durability
+<b>FIRE_ASPECT</b>
+When attacking a target, has a chance to set them on fire
+<b>KNOCKBACK</b>
+All damage to other targets will knock them back when hit
+<b>LOOT_BONUS_BLOCKS</b> 
+Provides a chance of gaining extra loot when destroying blocks
+<b>LOOT_BONUS_MOBS</b>
+Provides a chance of gaining extra loot when killing monsters
+<b>OXYGEN</b>
+Decreases the rate of air loss whilst underwater
+<b>PROTECTION_ENVIRONMENTAL</b> 
+Provides protection against environmental damage
+<b>PROTECTION_EXPLOSIONS</b>
+Provides protection against explosive damage
+<b>PROTECTION_FALL</b>
+Provides protection against fall damage
+<b>PROTECTION_FIRE</b>
+Provides protection against fire damage
+<b>PROTECTION_PROJECTILE</b> 
+Provides protection against projectile damage
+<b>SILK_TOUCH</b>
+Allows blocks to drop themselves instead of fragments (for example, stone instead of cobblestone)
+<b>THORNS</b>
+Damages the attacker
+<b>WATER_WORKER</b> 
+Increases the speed at which a player may mine underwater
+
+<a id="all_biomes_list"></a>
+<h1><b>All Biomes List</b></h1>
+
+Here is a list of all the biomes in Minecraft. You need biomes to knwo the biomes to make bosses spawn in biomes randomly.
+
+<b>All Biomes
+BEACH
+DESERT
+DESERT_HILLS
+EXTREME_HILLS
+FOREST
+FOREST_HILLS
+FROZEN_OCEAN
+FROZEN_RIVER
+HELL
+ICE_MOUNTAINS
+ICE_PLAINS
+JUNGLE
+JUNGLE_HILLS
+MUSHROOM_ISLAND
+MUSHROOM_SHORE
+OCEAN
+PLAINS
+RIVER
+SKY
+SMALL_MOUNTAINS
+SWAMPLAND
+TAIGA
+TAIGA_HILLS</b>
+
+<a id="create_your_first_boss"></a>
+<h1><b>Create Your First Boss</b></h1>
+<a href="https://www.youtube.com/watch?v=agAb9Ifbvzc">Youtube Tutorial</a>
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Mobs\MobsExample.yml</b>
+testboss: <b># boss name/id, used to summon the boss</b>
+  Mobtype: babyzombie <b># boss mob ID</b>
+  Display: '&eBossOfTrash &8[&2lvl 1&8]' <b># boss name - string</b>
+  DisplayVisible: true <b># set boss's name always visible? - bool</b>
+  Health: 200 <b># boss health - float / int</b>
+  Damage: 10 <b># boss damage value - float / int</b>
+  ShowHealth: true <b># show health on chat? - bool</b>
+  Despawn: false <b># despawn if no players nearby? - bool</b>
+testbossminion: <b># you can have more bosses in the same file</b>
+  Mobtype: babyzombie
+  Display: '&eBossOfTrash &8[&2minion&8]'
+  Health: 30
+  Damage: 10
+  ShowHealth: false
+  Despawn: false
+<a id="create_your_first_item"></a>
+<h1><b>Create Your First Item</b></h1>
+<a href="https://www.youtube.com/watch?v=qQAXq2AH0zI">Youtube Tutorial</a>
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Items\ItemsExample.yml</b>
+testItem: <b># item name/id, used to summon the item</b>
+  Id: 311 <b># item vanilla ID - int</b>
+  Data: 0 <b># optional data value, id 3 data 0 = dirt. id 3 data 3 = podzol - int</b>
+  Amount: 1 <b># item amount - int</b>
+  Display: '&eArmor &8of &eStrength' <b># item name - string</b>
+  Lores: <b># item lore</b>
+  - '&eThis is a very strong armor.' <b># item lore line 1 - string</b>
+  - '&eBe nice to it!' <b># item lore line 2 - string</b>
+  Enchants: <b># item enchantments from the <a href="#all_enchantments">enchantments list</a></b>
+  - PROTECTION_ENVIRONMENTAL:5 <b># enchantment_name : level</b>
+  - PROTECTION_EXPLOSIONS:2
+  - PROTECTION_FIRE:1
+  Tags: <b># optional atributes speed, health, atack</b>
+    Speed: 0.02
+    Health: 10
+    Attack: 20
+<a id="add_drops_to_your_boss"></a>
+<h1><b>Add Drops to Your Boss</b></h1>
+<a href="https://www.youtube.com/watch?v=yJen2O73ZHQ">Youtube Tutorial</a>
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Mobs\MobsExample.yml</b>
+testboss:
+  Mobtype: babyzombie
+  Display: '&eBossOfTrash &8[&2lvl 1&8]'
+  DisplayVisible: true
+  Health: 200
+  Damage: 10
+  ShowHealth: true
+  Despawn: false
+  Loot: <b># setting mob loot</b>
+  - testLoot <b># loot name/id from LootExample.yml</b>
+  - IronLoot <b># you can set more loot to the same boss</b>
+
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Loots\LootExample.yml</b>
+testLoot: <b># loot name / id</b>
+  Loot:
+  - testItem 0.5 <b># item name/id from ItemsExample.yml | chance(0 = 0%, 1 = 100%)</b>
+  - 266:0:16 0.25 <b># item_vanilla_id:data:amount | chance(0 = 0%,1 = 100%)</b>
+IronLoot:
+  Loot:
+  - 265:0:16 0.4
+<a id="add_equipment_to_your_boss"></a>
+<h1><b>Add Equipment to Your Boss</b></h1>
+<a href="https://www.youtube.com/watch?v=UY3agjS39aQ">Youtube Tutorial</a>
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Mobs\MobsExample.yml</b>
+testboss:
+  Mobtype: babyzombie
+  Display: '&eBossOfTrash &8[&2lvl 1&8]'
+  DisplayVisible: true 
+  Health: 200
+  Damage: 10
+  ShowHealth: true
+  Despawn: false
+  Loot:
+  - testLoot
+  - IronLoot
+  Equipment: <b># setting mob equipment</b>
+  - testEquip <b># equipment name/id from LootExample.yml</b>
+  - testEquip2 <b># you can set more equipment to the same boss, lower chance equipments have priority</b>
+
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Loots\LootExample.yml</b>
+testLoot:
+  Loot:
+  - testItem 1
+  - 266:0:10-50 1
+  - exp 100
+IronLoot:
+  Loot:
+  - 265:0:16 0.4
+testEquip: <b># equip id/name</b>
+  Loot:
+  - testItem:3 0.75 <b># item_name_id_from_ItemsExample.yml:slot_id | chance(0 = 0%,1 = 100%) - slot ID : 0 = Hand, 1 = Boots, 2 = Leggings, 3 = Chestplate, 4 = Helmet </b>
+  - 283:0:1:0 1 <b># item_vanilla_id:data:amount:slot_id | chance(0 = 0%,1 = 100%) - slot ID : 0 = Hand, 1 = Boots, 2 = Leggings, 3 = Chestplate, 4 = Helmet </b>
+testEquip2:
+  Loot: <b># you can have more equipments in the same file</b>
+  - 310:0:1:4 1 
+  - 315:0:1:3 0.5
+<a id="create_your_first_skill"></a>
+<h1><b>Create Your First Skill</b></h1>
+<a href="https://www.youtube.com/watch?v=QVCiW-NX_3s">Youtube Tutorial</a>
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Mobs\MobsExample.yml</b>
+testboss:
+  Mobtype: babyzombie
+  Display: '&eBossOfTrash &8[&2lvl 1&8]'
+  DisplayVisible: true 
+  Health: 200
+  Damage: 10
+  ShowHealth: true
+  Despawn: false
+  Loot:
+  - testLoot
+  - IronLoot
+  Equipment:
+  - testEquip
+  - testEquip2
+  Skills: <b># setting mob skills</b>
+  - pack PackExample >0 0.1 <b># pack_name_from_SkillExample.yml | condition(>300 = execute if boss's health is higher than 300, =0 = if equals 0, <20 = if less than 20, 20-500 = if between 20 and 500) | chance</b>
+  - swarm zombie:3:10 =100 1 <b># skill_from_<a href="#all_skills">the_skills_list</a> condition chance</b>
+
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Skills\SkillExample.yml</b>
+PackExample: <b># pack id/name </b>
+  Cooldown: 10 <b># pack cooldown in seconds, the boss will wait this time in seconds before executing this again</b>
+  Skills:
+  - lightning 50:15 >0 1 <b># skill_from_<a href="#all_skills">the_skills_list</a> | condition | chance</b>
+  - swarm $testbossminion:3:10 =100 1
+  - msg 50:'$boss &fused strike and called for friends!' >0 1
+
+<a id="how_to_setup_locations"></a>
+<h1><b>How to Setup Locations</b></h1>
+<a href="https://www.youtube.com/watch?v=Mod-U1kW0iA">Youtube Tutorial</a>
+You can save locations and spawn the boss there instead of spawning the boss with xyz coordinates.
+You can also use locations to setup timers.
+To save a location type /eb loc add [name]
+To delete a location type /eb loc remove [name]
+To list a location type /eb loc list
+To teleport to a location type /eb loc teleport [name]
+To spawn the boss at the location type /eb mob spawn [boss_id_name] [amount] [loc_name]
+
+<a id="how_to_setup_timers"></a>
+<h1><b>How to Setup Timers</b></h1>
+<a href="https://www.youtube.com/watch?v=AAHL2KVmSSk">Youtube Tutorial</a>
+You can use timers to spawn a boss every N seconds/hours at one <a href="#how_to_setup_locations">location</a>.
+First you need to save a location.
+
+<b>Example: file > plugins\EpicBoss-Updated-Edition\Timers\TimerExample.yml</b>
+timer1: <b># timer id/name</b>
+  Bosses: testboss <b># bosses to spawn at that location. you can set it just 'test'. so it will spawn randomly every boss with the 'test' word in his name</b>
+  MaxAmount: 3 <b># max bosses amount at the same time</b>
+  RespawnTime: 120 <b># time to respawn the boss in seconds</b>
+  WalkDistance: 0 <b># max distance from the location that the boss can spawn</b>
+timer2: <b># you can have more timers in the same file</b>
+  Bosses: testbossminion
+  MaxAmount: 1
+  RespawnTime: 600
+  WalkDistance: 20
+
+<a id="how_to_setup_random_spawning"></a>
+<h1><b>How to Setup Random Spawning</b></h1>
+<a href="https://www.youtube.com/watch?v=2lqBrcfpKtE">Youtube Tutorial</a>
+You can spawn any boss randomly at any world and any biome.
+
+<b>Example: file > plugins\EpicBoss-Updated-Edition\RandomSpawning\SpawningExample.yml</b>
+spawning1: <b># random spawning id/name</b>
+  Mobname: testboss <b># boss name/id from MobsExample.yml</b>
+  Worlds: world <b># world name. you can set more using world,world_nether,world_the_end</b>
+  Biome: plains,desert,nether <b># biomes list, if blank the boss will spawn in every biome</b>
+  Chance: 0.01 <b># 1% chance for the mob to spawn (0 = 0%, 1 = 100%)</b>
+  Priority: 1 <b># priority over others random spawnings</b>
+spawning2: <b># you can have more random spawning in the same file</b>
+  Mobname: testbossminion
+  Worlds: world
+  Chance: 0.1 <b># 10% chance for the mob to spawn.</b>
+  Priority: 1
+</body>
+</html>
