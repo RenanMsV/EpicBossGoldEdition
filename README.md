@@ -8,7 +8,7 @@ From https://www.spigotmc.org/resources/epic-boss-gold-edition-updated.45595/ ->
 ## Plugin download : 
 https://www.spigotmc.org/resources/epic-boss-gold-edition-updated.45595/
 ## Plugin docs :
-http://inutiles.atspace.cc/minecraft/EpicBossDocs/
+https://renanmsv.github.io/EpicBossGoldEdition/
 
 # 1.12.2 0.7.2
 * Can now get the boss UUID using $buuid in the cmd skill.
