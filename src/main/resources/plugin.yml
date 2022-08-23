@@ -1,0 +1,30 @@
+name: EpicBoss-Updated-Edition
+main: me.ThaH3lper.com.EpicBoss
+version: 0.7.3
+authors: [ThaH3lper, TheSubMatrix, Gelox1209, RenanMSV]
+description: EpicBoss Gold Edition is a plugin that allowes you as server admin to create your own mobs.
+api-version: 1.19
+commands:
+  epicboss:
+      description: EpicBoss Base Command!
+      aliases: [eb]
+
+permissions:
+  epicboss.admin:
+    description: Gives access to everything!
+    default: op
+  epicboss.item:
+    description: Gives access /eb item commands!
+    default: op
+  epicboss.location:
+    description: Gives access /eb loc commands!
+    default: op
+  epicboss.mob:
+    description: Gives access /eb mob commands!
+    default: op
+  epicboss.timer:
+    description: Gives access to create and remove timers!
+    default: op
+  epicboss.reload:
+    description: Gives access /eb reload!
+    default: op

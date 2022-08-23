@@ -1,0 +1,21 @@
+loot1:
+  Loot:
+  - Mask 1
+  - DIAMOND:0:20 1
+loot2:
+  Loot:
+  - IRON_INGOT:0:15 1
+loot3:
+  Loot:
+  - GOLD_INGOT:0:10 1
+loot4:
+  Loot:
+  - GOLDEN_HELMET:0:1:4 0.5
+  - GOLDEN_CHESTPLATE:0:1:3 0.5
+  - GOLDEN_LEGGINGS:0:1:2 0.5
+  - GOLDEN_BOOTS:0:1:1 0.5
+loot5:
+  Loot:
+  - Mask:4 1
+  - Chest:3 1
+  - HoeOfSpeed:0 1

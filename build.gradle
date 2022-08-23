@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'me.ThaH3lper.com'
+version '0.7.3'
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compileOnly 'org.spigotmc:spigot-api:1.19.1-R0.1-SNAPSHOT'
+    implementation files('BuildTools\\Spigot\\Spigot-Server\\target\\spigot-1.19.1-R0.1-SNAPSHOT.jar')
+}
+
+test {
+    useJUnitPlatform()
+}
